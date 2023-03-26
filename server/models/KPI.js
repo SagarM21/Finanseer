@@ -1,7 +1,7 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 import { loadType } from "mongoose-currency";
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 loadType(mongoose);
 
 const monthSchema = new Schema(
