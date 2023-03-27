@@ -6,7 +6,9 @@ import mongoose from "mongoose";
 import helmet from "helmet";
 import morgan from "morgan";
 import kpiRoutes from "./routes/kpi.js";
+import productRoutes from "./routes/product.js";
 import KPI from "./models/KPI.js";
+import Product from "./models/Product.js";
 import { kpis } from "./data/data.js";
 
 // CONFIGURATIONS
@@ -22,6 +24,7 @@ app.use(cors());
 
 // ROUTE
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
@@ -34,7 +37,7 @@ mongoose
 	.then(async () => {
 		app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-        // ADD DATA WHEN NEEDED
+		// ADD DATA WHEN NEEDED
 		// await mongoose.connection.db.dropDatabase();
 		// KPI.insertMany(kpis);
 	})
