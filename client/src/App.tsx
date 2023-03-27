@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import { ThemeProvider, CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { themeSettings } from "./theme";
 import Navbar from "@/scenes/navbar";
 import Dashboard from "@/scenes/dashboard";
@@ -10,7 +10,7 @@ import Dashboard from "@/scenes/dashboard";
 function App() {
 	const theme = useMemo(() => createTheme(themeSettings), []);
 	return (
-		<div className='App'>
+		<div className='app'>
 			<BrowserRouter>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
